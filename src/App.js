@@ -6,25 +6,29 @@ function Food({name, pic}) {
   return (
     <div>
       <h2>I LIKE {name}</h2>
-      <img src={pic} width="100%" />
+      <img src={pic} width="50%" alt={name} />
     </div>
   );
 }
 
 const foodILike = [
   {
+    id:1,
     name : 'Kimchi',
     image: 'https://www.canceranswer.co.kr/news/photo/202011/1492_2385_3537.jpg',
   },
   {
+    id:2,
     name : 'topokki',
     image: 'https://cdnweb01.wikitree.co.kr/webdata/editor/202007/07/img_20200707090644_7ebc248e.webp',
   },
   {
+    id:3,
     name : 'potato',
     image: 'https://img-cf.kurly.com/shop/data/goodsview/20201222/gv30000145401_1.jpg',
   }
 ];
+
 
 // App 컴포넌트 정의
 function App() {
@@ -32,8 +36,8 @@ function App() {
   return  (
     <div>
       <h1>Hello</h1>
-      {foodILike.map(dish=>(
-        <Food name={dish.name} pic={dish.image} />
+      { foodILike.map(dish=>(
+        <Food name={dish.name} pic={dish.image} key={dish.id} />
       ))}
     </div>
   );
