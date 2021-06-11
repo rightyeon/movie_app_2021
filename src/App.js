@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+function Food({name, pic}) { 
+  // return <h1>I LIKE { props.fav }</h1>;
+  // 구조 분해 할당 (destructuring assignment) 으로 사용하기
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>I LIKE {name}</h2>
+      <img src={pic} width="100%" />
+    </div>
+  );
+}
+
+const foodILike = [
+  {
+    name : 'Kimchi',
+    image: 'https://www.canceranswer.co.kr/news/photo/202011/1492_2385_3537.jpg',
+  },
+  {
+    name : 'topokki',
+    image: 'https://cdnweb01.wikitree.co.kr/webdata/editor/202007/07/img_20200707090644_7ebc248e.webp',
+  },
+  {
+    name : 'potato',
+    image: 'https://img-cf.kurly.com/shop/data/goodsview/20201222/gv30000145401_1.jpg',
+  }
+];
+
+// App 컴포넌트 정의
+function App() {
+  // 컴포넌트에서 HTML 을 반환
+  return  (
+    <div>
+      <h1>Hello</h1>
+      {foodILike.map(dish=>(
+        <Food name={dish.name} pic={dish.image} />
+      ))}
     </div>
   );
 }
