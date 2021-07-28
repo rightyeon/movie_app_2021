@@ -24,4 +24,9 @@
 
 ## Prop-types
 ### 컴포넌트가 전달받은 props가 원하는 값인지 확인할 때 필요.
-##### ``` npm install prop-types ``` 로 설치 후 package.json에 dependencies 
+##### ``` npm install prop-types ``` 로 설치 후 package.json에 dependencies 추가됨
+##### Food.propTypes = {
+#####       name   : PropTypes.string.isRequired,
+#####       pic: PropTypes.string.isRequired,
+#####       rating : PropTypes.number 
+##### }
